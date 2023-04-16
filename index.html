@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Thoughts</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    body{
+      text-align: center;
+      padding-top: 8rem;
+      background: black;
+      color: white;
+    }
+    textarea{
+      font-size: 2rem;
+      padding: 2rem;
+      margin-top: 2rem;
+      color: white;
+      background: black;
+      border-radius: 10px;
+    }
+    button{
+      padding: .8rem 2rem;
+      border-radius: 10px;
+      border: 0;
+      background: white;
+      font-weight: 800;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey, Bouncybutt </h1>
+  <textarea name="" id="text" cols="10" rows="9"></textarea>'
+  <br>
+  <button id="prevButton">prev</button>
+  <!-- <button onclick="generateAdvice()">Generate My Thoughts</button> -->
+
+  <button id="nextButton">Generate</button>
+
+
+  <script>
+    function generateAdvice(){
+      const advice = [
+        '"I am glad i found everything i ever wanted in a woman in you"',
+        '"You are my world and everything in one"',
+        '"I love you so much bouncybutt"',
+        '"You are the best thing that has ever happened to me"',
+        '"You complete me, you make me so happy and i think about you everyday"',
+        '"Never ever try to leave me"',
+        '"If I could, I would give you everything in the world "',
+        '"Thank you for always believing in me, it keeps me going"',
+        '"I am always by your side, I will always love you"',
+        '"We are perfect for each other, I am yours and you are my everything"',
+        '"I miss you so much and I cant stop thinking about you. I wish i could see you soon babe"'
+      ];
+    
+      let currentIndex = Math.floor(Math.random() * advice.length);
+
+function generateAdvice() {
+  const textDisplay = document.getElementById("text");
+  textDisplay.innerHTML = advice[currentIndex];
+}
+
+function showNextAdvice() {
+  currentIndex = (currentIndex + 1) % advice.length;
+  generateAdvice();
+}
+
+function showPrevAdvice() {
+  currentIndex = (currentIndex - 1 + advice.length) % advice.length;
+  generateAdvice();
+}
+
+// Add event listeners to the buttons
+const nextButton = document.getElementById("nextButton");
+nextButton.addEventListener("click", showNextAdvice);
+
+const prevButton = document.getElementById("prevButton");
+prevButton.addEventListener("click", showPrevAdvice);
+
+// Initialize the display
+
+}
+generateAdvice();
+
+
+  
+
+  </script>
+</body>
+</html>
